@@ -259,7 +259,7 @@ $$
 ### Matrix Definitions: Special Matrices
 1. Zero Matrix: can be of $m \times n$ size or dimensionality, denoted as $0_{m \times n}$.
 	- Shows up in the equation $Ax = 0$, where $x$ is a column vector.
-	- Plays the role of zero in multiplication (effectively returns $0_{m \times n}$)
+	- Plays the role of zero in multiplication (effectively returns $0_{m \times n}$ for any matrix multiplied to it)
 
 2. Identity Matrix: plays the role of $1$ in multiplication.
 	- always of the size $n \times n$ (i.e. a square matrix of **order n**)
@@ -268,6 +268,7 @@ $$
 
 3. Diagonal Matrix: has only elements on the diagonal, but zero elsewhere, denoted as $D_n$.
 	- diagonal entries $d_1, d_2, \ldots, d_n$ are said to be the diagonal entries.
+	- all other entries **not along the main diagonal** $= 0$ (we don't follow the other textbook's definition).
 	$$
 	D_3 = \begin{pmatrix} d_1 & 0 & 0 \\ 0 & d_2 & 0 \\ 0 & 0 & d_3 \end{pmatrix}
 	$$
@@ -288,3 +289,69 @@ $$
 	L_3 &= \begin{pmatrix} * & 0 & 0 \\ * & * & 0 \\ * & * & * \end{pmatrix}
 	\end{aligned}
 	$$
+
+### Matrix Definitions E3a:
+Let $A = \begin{pmatrix} -1 & 2 \\ 4 & -8 \end{pmatrix}.$ Construct a two-by-two matrix $B$ such that $AB$ is the zero matrix. Use *two different nonzero columns* for $B$.
+$$
+\begin{aligned}
+A &= \begin{pmatrix} -1 & 2 \\ 4 & -8 \end{pmatrix} \\
+B &= \begin{pmatrix} z_1 & z_2 \\ z_3 & z_4 \end{pmatrix} \\\\
+AB &=  0_{2 \times 2} \\
+&= \begin{pmatrix} -1 & 2 \\ 4 & -8 \end{pmatrix}\begin{pmatrix} z_1 & z_2 \\ z_3 & z_4 \end{pmatrix} \\
+&= \begin{pmatrix} (-1)(z_1)+2(z_3)  & (-1)(z_2)+(2)(z_4) \\ 
+4(z_1)+(-8)(z_3) & 4(z_2)+(-8)(z_4) \end{pmatrix} \\\\
+\text{So, we have:} \\
+&2z_3 - z_1 = 0 \implies z_1 = 2z_3\\
+&2z_4 - z_2 = 0 \implies z_2 = 2z_4\\
+&4z_1 - 8z_3 = 0 \\
+&4z_2 - 8z_4 = 0 \\\\
+&\text{We can pick arbitrary values of \(z_1, z_2, z_3\) and \(z_4\), provided they are different.} \\
+&\text{Initial idea: \(z_1 = z_2 = 2\) and \(z_3 = z_4 = 1\) but \(z_1 \neq z_2\) and \(z_3 \neq z_4\), so the final matrix is:} \\
+&\boxed{B = \begin{pmatrix} 2 & -2 \\ 1 & -1 \end{pmatrix}}
+\end{aligned}
+$$
+---
+### Transpose and Inverses: Transposing Matrix
+We can say the transpose of matrix $A, A^T$is when the rows of the matrix become the columns and the columns become the rows.
+- a matrix of size $m \times n$ is **transposed** to become a matrix of $n \times m$ instead.
+- transposing the matrix can be seen as a **reflection** along its the main diagonal.
+	$$
+	\begin{aligned}
+	A = \begin{pmatrix} 
+	a_{11} & a_{12} & \cdots & a_{1n} \\ 
+	a_{21} & a_{22} & \cdots & a_{2n} \\ 
+	\vdots & \vdots & \ddots & \vdots \\ 
+	a_{m1} & a_{m2} & \cdots & a_{mn} 
+	\end{pmatrix}
+	\text{  becomes  }
+	A^T = \begin{pmatrix} 
+	a_{11} & a_{21} & \cdots & a_{m1} \\ 
+	a_{12} & a_{22} & \cdots & a_{m2} \\ 
+	\vdots & \vdots & \ddots & \vdots \\ 
+	a_{1n} & a_{2n} & \cdots & a_{mn} 
+	\end{pmatrix}
+	\end{aligned}
+	$$
+#### Properties of Transpositions
+In other notation, each element, $a_{ij}$ goes through the phase of transposition to become $a_{ji}$, i.e. the indices get swapped.
+$$
+a^{\scriptscriptstyle{T}}_{ij} = a_{ji}
+$$
+We can also make the observation that we obtain the original matrix after two such transpositions
+$$
+(A^T)^T = A
+$$
+In addition, $(A + B)^T = A^T + B^T$
+
+Another rule is that $(AB)^T = B^T \cdot A^T$ (reverse the order of multiplication).
+
+#### Other Special Matrices
+1. Symmetric Matrix: a matrix is of this type if $A^T = A$.
+2. Skew-Symmetric Matrix a matrix where $A^T = -A$ and the diagonal entries are zero (since $+0 = -0$).
+
+### Transpose and Inverses: Inner (Dot) and Outer products
+Given two column vectors $U =\begin{pmatrix}u_1 \\ u_2 \\ u_3\end{pmatrix}, V =\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix}$,
+The dot (or inner) product is calculated as: $U^TV$ (since row and columns don't line up in this case to produce a well-defined result).
+$$
+
+$$

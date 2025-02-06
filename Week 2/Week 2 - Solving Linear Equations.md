@@ -116,8 +116,6 @@ $$
 	- *REF is not unique (can have multiple), RREF is unique*
 
 - **Lemma 2:** If we have two matrices $A$ and $B$ in RREF for two homogenous system of $m$ equations, then the two systems have exactly the same solutions and thus $A = B$.
-
-
 ### Misc Notes
 We are not tested on sophisticated proofs
 

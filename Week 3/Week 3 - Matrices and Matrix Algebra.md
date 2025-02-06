@@ -135,7 +135,11 @@ What if only of $A$ or $B$ is diagonal?
 #### Section 2.3 Question
 - homogenous in terms of matrix equations.
 	- $A$ is a matrix, $x$ is a vector of $n$ dimensionality (of $n$ rows)
-	- homogenous linear system $\implies$ **RHS are all zeroes.**
+	- homogenous linear system $\implies$ **RHS are all zeroes**, so $b = 0$
+
+$$
+Ax = b, 0 = A0 = b
+$$
 
 - Trivial solutions to the system
 	- set $x_1 = x_2 = \ldots = x_i = 0$, then that is the solution (no effort needed, no need to go through Gaussian Elimination)
@@ -180,7 +184,7 @@ $$
 \text{LHS} &= B^TA^T \\
 & \neq BA \\
 \\
-\therefore, (AB)^T & \neq AB
+\therefore \: (AB)^T & \neq AB
 \end{aligned}
  $$
 

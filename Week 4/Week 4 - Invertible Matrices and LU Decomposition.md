@@ -100,14 +100,14 @@ Let $A = LU$ be the $LU$ factorization of $A$. Which of the following are true?
 (b) If $A$ is of size $m \times n$, then $m \geq n$
 (c) $Ax=b$ is consistent $\forall b$
 
-Answer: all false, all have counterexamples.
+Answer: all false, all have counterexamples (see slides).
 
 ### Other
 - any unit lower triangular matrix is invertible (which is row equivalent to identity matrix)
 $$
 L^{-1}L = I_n \text{ s.t. } Ly = b \to L^{-1}(Ly) = (L^{-1})b 
 $$
-Permutation matrix: do some shuffling if there is no $LU$ matrix (not in scope)
+- Permutation matrix: do some shuffling if there is no $LU$ matrix (not in scope of MA1522)
 
 ---
 ### Notation

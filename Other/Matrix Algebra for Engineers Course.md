@@ -107,7 +107,7 @@ $$
 	$$
 	\begin{aligned}
 	\text{For } c_{ij} \in C,\\
-	c_{ij} &= \sum_{k=1}^n a_{ik}\:b_{kj} \quad\text{where by sum by the indices of \(k\).}
+	c_{ij} &= \sum_{k=1}^n a_{ik}\:b_{kj} \quad\text{where we sum by the indices of \(k\).}
 	\end{aligned}
 	$$
 
@@ -290,7 +290,7 @@ $$
 	\end{aligned}
 	$$
 
-### Matrix Definitions E3a:
+### Matrix Definitions E3a: $AB=0$ When $A$ and $B$ Are Not zero
 Let $A = \begin{pmatrix} -1 & 2 \\ 4 & -8 \end{pmatrix}.$ Construct a two-by-two matrix $B$ such that $AB$ is the zero matrix. Use *two different nonzero columns* for $B$.
 $$
 \begin{aligned}
@@ -306,15 +306,29 @@ AB &=  0_{2 \times 2} \\
 &4z_1 - 8z_3 = 0 \\
 &4z_2 - 8z_4 = 0 \\\\
 &\text{We can pick arbitrary values of \(z_1, z_2, z_3\) and \(z_4\), provided they are different.} \\
-&\text{Initial idea: \(z_1 = z_2 = 2\) and \(z_3 = z_4 = 1\) but \(z_1 \neq z_2\) and \(z_3 \neq z_4\), so the final matrix is:} \\
+&\text{Initial idea: \(z_1 = z_2 = 2\) and \(z_3 = z_4 = 1\) but \(z_1 \neq z_2\) and \(z_3 \neq z_4\) as required by the question, so the final matrix is:} \\
 &\boxed{B = \begin{pmatrix} 2 & -2 \\ 1 & -1 \end{pmatrix}}
 \end{aligned}
 $$
+
+### Matrix Definitions E3b: Product of Diagonal Matrices
+Verify that $\begin{pmatrix} a_1 & 0 \\ 0 & a_2 \end{pmatrix}\begin{pmatrix} b_1 & 0 \\ 0 & b_2 \end{pmatrix} = \begin{pmatrix} a_1 b_1 & 0 \\ 0 & a_2 b_2 \end{pmatrix}.$ Prove in general that the product of two diagonal matrices is a diagonal matrix, with elements given by the product of the diagonal elements.
+
+$$
+\begin{aligned}
+	\begin{pmatrix} a_1 & 0 \\ 0 & a_2 \end{pmatrix}
+	\begin{pmatrix} b_1 & 0 \\ 0 & b_2 \end{pmatrix} &= 
+	\begin{pmatrix} (a_1)(b_1)+(0)(0) & (a_1)(0)+(0)(b_2) \\(0)(b_1)+(a_2)(0) & (0)(0)+(a_2)(b_2)\end{pmatrix} \\\\
+	&= \begin{pmatrix} a_1 b_1 & 0 \\ 0 & a_2 b_2 \end{pmatrix}
+\end{aligned}
+$$
+Proof not continued as we have different defn.
+
 ---
 ### Transpose and Inverses: Transposing Matrix
 We can say the transpose of matrix $A, A^T$is when the rows of the matrix become the columns and the columns become the rows.
-- a matrix of size $m \times n$ is **transposed** to become a matrix of $n \times m$ instead.
-- transposing the matrix can be seen as a **reflection** along its the main diagonal.
+- a matrix of size $m \times n$ is **transposed** to become a matrix of $n \times m$ instead (size is "flipped").
+- transposing the matrix can be seen as a **reflection** along the main diagonal.
 	$$
 	\begin{aligned}
 	A = \begin{pmatrix} 
@@ -341,17 +355,64 @@ We can also make the observation that we obtain the original matrix after two su
 $$
 (A^T)^T = A
 $$
-In addition, $(A + B)^T = A^T + B^T$
+In addition, $(A + B)^T = A^T + B^T$ (if both $A$ and $B$ of order $n$).
 
 Another rule is that $(AB)^T = B^T \cdot A^T$ (reverse the order of multiplication).
-
 #### Other Special Matrices
 1. Symmetric Matrix: a matrix is of this type if $A^T = A$.
-2. Skew-Symmetric Matrix a matrix where $A^T = -A$ and the diagonal entries are zero (since $+0 = -0$).
+2. Skew-Symmetric Matrix a matrix where $A^T = -A$ and the **diagonal entries are zero** (since $+0 = -0$).
+$$
+A = \begin{pmatrix}0 & b & c \\ -b & 0 & e\\ -c & -e & 0\end{pmatrix}
+$$
 
 ### Transpose and Inverses: Inner (Dot) and Outer products
+##### The Inner Product
 Given two column vectors $U =\begin{pmatrix}u_1 \\ u_2 \\ u_3\end{pmatrix}, V =\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix}$,
-The dot (or inner) product is calculated as: $U^TV$ (since row and columns don't line up in this case to produce a well-defined result).
+1. The dot (or inner) product *between two vectors* is calculated as: $U^TV$ (since row and columns don't line up in this case to produce a well-defined result).
+	$$
+	\begin{aligned}
+	U^TV &= \begin{pmatrix}u_1 & u_2 & u_3\end{pmatrix}\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix} \\
+	&= u_1v_1 + u_2v_2 + u_3v_3 \\\\
+	&\text{In the case where \(U^TV\) = 0} \implies u, v \textbf{ are orthogonal.}
+	\end{aligned}
+	$$
+2. The **norm of the vector** $U$, $\| U \|$ is the length of $U$.
+	$$
+	\begin{aligned}
+	\| U \| &= (U^T \cdot U)^{\frac{1}{2}} \\
+	&= \sqrt{(u_1)^2 + (u_2)^2 + (u_3)^2 + \ldots + (u_i)^2}
+	\end{aligned}
+	$$
+
+3. We say that $U$ is normalized if $\| U \| = 1$ (i.e. the unit vector).
+4. If two vectors are **orthogonal** (i.e. perpendicular) **and normalized**, then the vectors are then said to be **orthonormal**.
+	1. a set of vectors has this property.
+
+##### The Outer Product
+Given two column vectors $U =\begin{pmatrix}u_1 \\ u_2 \\ u_3\end{pmatrix}, V =\begin{pmatrix}v_1 \\ v_2 \\ v_3\end{pmatrix}$,
+1. The outer product between two vectors is calculated as: $UV^T$
+	$$
+	\begin{aligned}
+	UV^T &= \begin{pmatrix}u_1 \\ u_2 \\ u_3\end{pmatrix}\begin{pmatrix}v_1 & v_2 & v_3\end{pmatrix} \qquad \text{(Of dimensionality \(3 \times 3\))}\\
+	&= \begin{pmatrix} u_1 v_1 & u_1 v_2 & u_1 v_3 \\ u_2 v_1 & u_2 v_2 & u_2 v_3 \\ u_3 v_1 & u_3 v_2 & u_3 v_3 \end{pmatrix} \\\\
+	\end{aligned}
+	$$
+### Transpose and Inverses: Inverse of a Matrix
+If a matrix is **invertible**, we mean that it has a corresponding inverse matrix.
+- not all matrices are invertible.
+
+$A \cdot A^{-1} = I_n = A^{-1} \cdot A$, where the order commutes. 
+
+#### Properties of Invertible Matrices
+1. For $A$ to be invertible, it has to be a square matrix of **order $n$**.
+2. The inverse of the product of two square matrices is:
+$$
+(AB)^{-1} = B^{-1}A^{-1}
+$$
+3.  *Theorem:* Inverse of the transposed matrix
+$$
+(A^T)^{-1} = (A^{-1})^T
 $$
 
-$$
+Strategy is to use the homogeneous equations to solve for variables $x, y, z, \ldots$
+We can use the formula $\text{det}A = ad - bc$

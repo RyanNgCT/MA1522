@@ -15,7 +15,7 @@ If $C = \begin{pmatrix}1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\end{pmatrix} \implies
 For $A_{4 \times 4} \implies det(A)?$
 - The $(i,j)$-th cofactor of $A$
 	- refers to row $i$ and column $j$ (to be removed)
-	- dimensionality of the $(i,j)$-th matrix minor is $(m-1) \times (n-1)$, can be denoted as $M_{ij}$
+	- dimensionality of the $(i,j)$-th matrix minor is $(n-1) \times (n-1)$, can be denoted as $M_{ij}$ (for a order $n$ matrix)
 	- Then we determine that the cofactor $A_{ij} = (-1)^{i + j} det(M_{ij})$
 
 Given $\textbf{A}_{n \times n}$

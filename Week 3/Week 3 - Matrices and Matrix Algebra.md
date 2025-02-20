@@ -46,7 +46,7 @@ $$
 	- from $AB = AC, \: A \neq 0$ cannot conclude that $B = C$
 
 ### Invertible Matrices
-- an invertible matrix needs to be a square (i.e. has the dimensions of $n \times n$)
+- an invertible matrix needs to be a *square* (i.e. has the dimensions of $n \times n$)
 	- by right, need to check $A \times B$ and $B \times A$ (using the identity law), but for square $n \times n$, checking **one side suffices**
 	$$
 		\textbf{AB} = \textbf{\(I_n\)} = \textbf{BA}
@@ -60,6 +60,8 @@ $$
 	- RREF of $A$ is a identity matrix
 	- $A$ can be expressed as product of elementary matrices
 	- (7) and (8) mentions some system and equation
+
+- having invertible matrices enables us to do cancellation
 
 ### Section 2.1 Questions
 Concepts of 

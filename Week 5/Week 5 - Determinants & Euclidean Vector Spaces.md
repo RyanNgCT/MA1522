@@ -70,9 +70,9 @@ For diagonal matrix, the transpose is itself.
 - (5) addition inside $\textbf{v}$
 - (6) addition of two real numbers $a + b, \forall a, b \in \mathbb{R}$
 
-(7) Associativity of Scalar Multiplication
-- multiplication of real numbers
-- then scalar multiplication of the result.
+- (7) Associativity of Scalar Multiplication
+	- multiplication of real numbers
+	- then scalar multiplication of the result.
 
 $\forall u_1, u_2 \in U, U$ is closed under addition $u_1 + u_2$.
 - result will still be in the set $U$

@@ -177,15 +177,22 @@ Condition 2: Leading entries go down and to the right
 
 > Two matrices are said to be **row equivalent** if one matrix can be converted into another matrix by using row operations.
 - Note that for the same (augmented) matrix it can have multiple row-equivalent REFs, but only has one unique RREF.
-
+- Note that $\text{row equivalence} \neq \text{equivalent matrices}$
 ### Pivot Columns
 > When a matrix is in REF, the location of the leading entry of each row in that matrix is called a **pivot**
-- easier to see the pivot columns when the augmented matrix is in REF form.
+- easier to **see the pivot columns** when the *augmented matrix is in REF form*.
 - REFs will all have the same pivot points, even though matrix have different unique REFs
 - each column that contains a pivot is called a pivot column
 
 ### Reducing a Matrix to REF
-1. Identify the pivots from left to right
-	1. Perform swap operation on the first pivot column and then to subsequent once while necessary to obtain a non-pivot entry in that position
-	2. Each pivot is in the row below the previous pivot 
-2. Use replacement operations 
+1. Identify the **pivots** from left to right
+	1. The $1^{\text{st}}$ pivot is at the **top of the first column** that is not all zeroes. Perform swap operation on the first pivot column and then to subsequent ones (where each pivot is below its previous predecessor) while necessary to obtain a non-pivot entry in that position, without disturbing the leading entries of the previous rows.
+	
+2. **(Optional)** Use scaling operations to make the pivot equal to one
+	- may be helpful at times
+	-  $\times \frac{1}{a}$ or $\times a$ operation 
+
+3. Use *replacement operations* (various e.r.o.) to create zeroes in all positions below the pivot. Always replace the row where we want there to be a zero, using a multiple of the row containing the pivot. 
+	- $\times \frac{1}{a}$ or $\times a$ operation 
+
+4. Repeat steps $1$ to $3$ until there are no more pivots.

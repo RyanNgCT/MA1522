@@ -13,7 +13,7 @@ $$
 $$
 has non-pivot columns. What can we conclude?
 
-We can make the $RHS = 0$ and therefore there are multiple solutions to $\begin{pmatrix}u_1 & u_2 & \ldots & u_n \: | \: 0\end{pmatrix}$ 
+We can make the $\text{RHS} = 0$ and therefore there are multiple solutions to $\begin{pmatrix}u_1 & u_2 & \ldots & u_n \: | \: 0\end{pmatrix}$ 
 - can conclude that $S$ is linearly dependent
 
 Check the consistency of the system $\implies$ can conclude that it is a basis, but **cannot** conclude that it spans the subspace $V$
@@ -69,7 +69,7 @@ Proof for Linear independence is almost always the same
 - if two spaces have the same dimension, then they are isomorphic
 
 ## Spanning Set Theorem
-Suppose $S$ spans the whole space, then we can cherry pick some elements in $S$ to form a basis
+Suppose $S$ spans the whole space, then we can *cherry pick* some elements in $S$ to form a basis
 - sufficient to find a subcollection which is the basis (i.e. $\{u_{ii}, u_{ij}, \ldots u_{im}\} \subseteq \{u_1, u_2, \ldots u_k\}$ )
 - the basis is the smallest spanning set (i.e. the set which spans the subspace)
 
@@ -126,6 +126,7 @@ $[v_1]_s$ is the coordinate of $v_1$ in relation to the basis $S$.
 $$
 \left( \begin{array}{c|cccc} I_k & [\mathbf{v}_1{}]_S & [\mathbf{v}_2{}]_S & \cdots & [\mathbf{v}_k{]}_S \\  \mathbf{0}_{(n-k) \times k} & 0 & 0 & \cdots & 0 \end{array} \right) = \left( \begin{array}{c|c} I_k & \mathbf{P} \\  \mathbf{0}_{(n-k) \times k} & 0_{(n-k) \times k} \end{array} \right)
 $$
+- In $n$ space with $k$ vectors where $k$ is the number of vectors
 ### Challenge in Section 3.8
 **Suggested Solution**
 - rewrite $v$ as a linear combination of the elements in both the bases $S$ and $T$

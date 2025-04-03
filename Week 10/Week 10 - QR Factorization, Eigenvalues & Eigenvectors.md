@@ -100,6 +100,7 @@ $$
 
 Think of a matrix as an action on $\mathbb{R}^{n}$ (i.e. a linear transformation)
 - eigenvectors are the vectors being scaled when acted upon by $A$
+	- for each eigenvector, there is a fixed eigenvalue (association from eigenvalue to eigenvector)
 - eigenvalues are the amount to be scaled
 ## Eigenspace
 - Recall that eigenvectors of $A$ associated to eigenvalue $\lambda$ are non-trivial solutions to:

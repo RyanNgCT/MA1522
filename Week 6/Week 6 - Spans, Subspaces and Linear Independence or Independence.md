@@ -69,7 +69,6 @@ Subspace is defined by three conditions (where all needs to be met)
 
 **The idea of closure in algebra**
 - cannot go out of one of the smaller subset $V$ that is contained in the universal set $U$.
-
 ##### Subspace
 - is someone a subset of structures (a.k.a. substructure, in algebraic terminology)
 - has the same structure as a "euclidean space" but is just smaller, hence the name
